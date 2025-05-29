@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Markup Generator - SEO Rocket</title>
+    <meta name="description" content="Free Schema Markup Generator by SEO Rocket. Create valid JSON-LD structured data for better SEO performance.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="brand">
+                <a href="https://seorocket.dev" target="_blank" rel="noopener" class="brand-link">
+                    <span class="brand-name">SEO Rocket</span>
+                </a>
+            </div>
+            <h1>Schema Markup Generator</h1>
+            <p class="subtitle">Create valid JSON-LD structured data for better SEO performance</p>
+        </header>
+
+        <div class="main-grid">
+            <div class="panel">
+                <h2>Build Your Schema</h2>
+                
+                <div class="form-container">
+                    <!-- Template Selection -->
+                    <div class="form-group">
+                        <label>Quick Start Templates</label>
+                        <div class="template-selector">
+                            <div class="template-card" onclick="loadTemplate('organization')">
+                                <h3>Organization</h3>
+                                <p>Company or business info</p>
+                            </div>
+                            <div class="template-card" onclick="loadTemplate('localbusiness')">
+                                <h3>Local Business</h3>
+                                <p>Physical store or service</p>
+                            </div>
+                            <div class="template-card" onclick="loadTemplate('product')">
+                                <h3>Product</h3>
+                                <p>Physical or digital product</p>
+                            </div>
+                            <div class="template-card" onclick="loadTemplate('event')">
+                                <h3>Event</h3>
+                                <p>Concert, meeting, etc.</p>
+                            </div>
+                            <div class="template-card" onclick="loadTemplate('faq')">
+                                <h3>FAQ Page</h3>
+                                <p>Q&A content</p>
+                            </div>
+                            <div class="template-card" onclick="loadTemplate('article')">
+                                <h3>Article</h3>
+                                <p>Blog post or news</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schema Type Selection -->
+                    <div class="form-group">
+                        <label>
+                            Schema Type
+                            <span class="tooltip">
+                                <span class="tooltip-text">Select the main type of content you want to markup. This determines which fields will be available.</span>
+                            </span>
+                        </label>
+                        <select id="schemaType" onchange="handleSchemaTypeChange()">
+                            <option value="">Select a schema type...</option>
+                            <option value="Organization">Organization</option>
+                            <option value="LocalBusiness">Local Business</option>
+                            <option value="Product">Product</option>
+                            <option value="Event">Event</option>
+                            <option value="Article">Article</option>
+                            <option value="NewsArticle">News Article</option>
+                            <option value="BlogPosting">Blog Post</option>
+                            <option value="FAQPage">FAQ Page</option>
+                            <option value="Recipe">Recipe</option>
+                            <option value="Person">Person</option>
+                            <option value="WebPage">Web Page</option>
+                            <option value="WebSite">Website</option>
+                            <option value="VideoObject">Video</option>
+                            <option value="Course">Course</option>
+                            <option value="SoftwareApplication">Software Application</option>
+                            <option value="Book">Book</option>
+                            <option value="Movie">Movie</option>
+                            <option value="MusicAlbum">Music Album</option>
+                            <option value="JobPosting">Job Posting</option>
+                            <option value="Service">Service</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic Form Container -->
+                    <div id="dynamicForm"></div>
+
+                    <!-- Action Buttons -->
+                    <div class="btn-group">
+                        <button class="btn" onclick="validateAndUpdate()">Validate Schema</button>
+                        <button class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>JSON-LD Preview</h2>
+                <div class="preview-container">
+                    <button class="btn btn-success copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+                    <pre class="preview-code" id="jsonPreview">{
+  "@context": "https://schema.org",
+  "@type": "Select a schema type to begin..."
+}</pre>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="site-footer">
+            <p>Built with ❤️ by <a href="https://seorocket.dev" target="_blank" rel="noopener">SEO Rocket</a> | 
+            <a href="https://github.com/Seo-Rocket-Tools" target="_blank" rel="noopener">GitHub</a> | 
+            Free Schema Markup Generator for Better SEO</p>
+        </footer>
+    </div>
+
+    <!-- Load JavaScript modules in order -->
+    <script src="js/data/schema-definitions.js"></script>
+    <script src="js/data/nested-definitions.js"></script>
+    <script src="js/data/templates.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ui/form-generator.js"></script>
+    <script src="js/ui/tooltip-handler.js"></script>
+    <script src="js/ui/ui-actions.js"></script>
+    <script src="js/schema/schema-builder.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
